@@ -18,14 +18,11 @@ const Form = () => {
     })
 
     const inputEvent = (event) => {
-        console.log(event.target.value);
-        console.log(event.target.name);
 
         const value = event.target.value;
         const name = event.target.name;
 
         setFullData((preValue) => {
-            console.log(preValue);
            return{
                ...preValue,
                [name]:value
@@ -61,14 +58,14 @@ const Form = () => {
                             <h1 className="side">Hi there ;)</h1>
                             <p id="para">Enter your details to register yourself</p>
                             <div className="input">
-                                <input id="input1" type="text" placeholder=" fdtdtgdcg" onChange={inputEvent} value={fullData.name} name="name" required />
+                                <input id="input1" type="text" placeholder="Name" onChange={inputEvent} value={fullData.name} name="name" required />
                                 <label htmlFor="text" className="label">Name</label></div>
 
                             <div className="input">
-                                <input id="input2" type="email" onChange={inputEvent} value={fullData.email} placeholder=" " name="email" required />
+                                <input id="input2" type="email" onChange={inputEvent} value={fullData.email} placeholder="College Email" name="email" required />
                                 <label htmlFor="text" className="label">College Email</label></div>
                             <div className="input">
-                                <input id="input3" type="text" minlength="7" maxlength="7" onChange={inputEvent} value={fullData.studentNumber} placeholder=" " name="studentNumber" required />
+                                <input id="input3" type="text" minlength="7" maxlength="7" onChange={inputEvent} value={fullData.studentNumber} placeholder="Student Number" name="studentNumber" required />
                                 <label htmlFor="text"  className="label">Student Number</label></div>
 
                             <div className="inline">
@@ -91,7 +88,7 @@ const Form = () => {
                             </div>
                             
                             <div className="input">
-                                <input id="input4" onChange={inputEvent} value={fullData.phoneNumber} placeholder=" " type="tel" minlength="10" maxlength="10" name="phoneNumber" required />
+                                <input id="input4" onChange={inputEvent} value={fullData.phoneNumber} placeholder="Whatsapp Number" type="tel" minlength="10" maxlength="10" name="phoneNumber" required />
                                 <label htmlFor="text" className="label">Whatsapp Number</label>
                             </div>
                             <select id="select3" onChange={inputEvent} value={fullData.domain} name="domain" required >
