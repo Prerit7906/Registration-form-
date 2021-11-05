@@ -26,18 +26,15 @@ const Form = () => {
 
         setFullData((preValue) => {
             console.log(preValue);
-            // setFullData({ ...fullData, [name]: value })
            return{
                ...preValue,
                [name]:value
            }
-            // alert(this.fullData.flname)
         })
 
     };
 
     const onSubmit = (event) => {
-        // const isHostler = (isHostler === "Yes");
         const user = { ...fullData };
         console.log(user)
         axios.post('https://cine21.herokuapp.com/register', user)
@@ -68,11 +65,10 @@ const Form = () => {
                                 <label htmlFor="text" className="label">Name</label></div>
 
                             <div className="input">
-
                                 <input id="input2" type="email" onChange={inputEvent} value={fullData.email} placeholder=" " name="email" required />
                                 <label htmlFor="text" className="label">College Email</label></div>
                             <div className="input">
-                                <input id="input3" type="text" onChange={inputEvent} value={fullData.studentNumber} placeholder=" " name="studentNumber" required />
+                                <input id="input3" type="text" minlength="7" maxlength="7" onChange={inputEvent} value={fullData.studentNumber} placeholder=" " name="studentNumber" required />
                                 <label htmlFor="text"  className="label">Student Number</label></div>
 
                             <div className="inline">
@@ -95,7 +91,7 @@ const Form = () => {
                             </div>
                             
                             <div className="input">
-                                <input id="input4" onChange={inputEvent} value={fullData.phoneNumber} placeholder=" " type="tel" name="phoneNumber" required />
+                                <input id="input4" onChange={inputEvent} value={fullData.phoneNumber} placeholder=" " type="tel" minlength="10" maxlength="10" name="phoneNumber" required />
                                 <label htmlFor="text" className="label">Whatsapp Number</label>
                             </div>
                             <select id="select3" onChange={inputEvent} value={fullData.domain} name="domain" required >
